@@ -4,14 +4,14 @@ The Container Storage Interface (CSI) Driver for IBM block storage systems enabl
 This is the official operator to deploy and manage IBM block storage CSI driver.
 
 Supported container platforms:
-  - Openshift v4.1
+  - OpenShift v4.1
   - Kubernetes v1.13
 
 Supported operating systems:
   - RHEL 7.x (x86 architecture)
   - RHCOS 4.1 (x86 architecture)
 
-## Prerequisite
+## Prerequisites
 Please go to section [`Prerequisites for Driver Installation`](https://github.com/IBM/ibm-block-csi-driver#prerequisites-for-driver-installation) for details.
 
 ## Installation
@@ -21,8 +21,8 @@ Please go to section [`Prerequisites for Driver Installation`](https://github.co
 ```bash
 curl https://raw.githubusercontent.com/IBM/ibm-block-csi-operator/develop/deploy/ibm-block-csi-operator.yaml > ibm-block-csi-operator.yaml
 ```
-2. Update the image fields in the ibm-block-csi-operator.yaml if the default values are not fit for you.
-3. Install the operator
+2. If required, update the image fields in the ibm-block-csi-operator.yaml.
+3. Install the operator.
 
 <!-- $ kubectl apply -f csi_driver.yaml  (download and install csi_driver.yaml only if you are using Kubernetes v.1.14+) -->
 ```bash
@@ -38,7 +38,7 @@ ibm-block-csi-operator-5bb7996b86-xntss 2/2     Running   0          10m
 ```
 
 ### Create an IBMBlockCSI custom resource
-1. Create an IBMBlockCSI yaml file (ibc.yaml) as following and update the repository and tag if the default values are not fit for you:
+1. Create an IBMBlockCSI yaml file (ibc.yaml). If required, update the repository and tag.
 ```
 apiVersion: csi.ibm.com/v1
 kind: IBMBlockCSI
@@ -54,7 +54,7 @@ spec:
     tag: "1.0.0_b40_origin.develop"
 ```
 
-2. Apply it:
+2. Apply the yaml file.
 
 ```bash
 $ kubectl apply -f ibc.yaml
@@ -74,9 +74,9 @@ ibm-block-csi-node-zgh5h   3/3     Running   0          10m
 
 ```
 
-> **Note**: For further usage, please go to https://github.com/IBM/ibm-block-csi-driver
+> **Note**: For further usage instructions, please go to https://github.com/IBM/ibm-block-csi-driver.
 
-## Uninstallation
+## Uninstalling
 
 ### 1. Delete the IBMBlockCSI custom resource
 ```bash
